@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon server.js",
     "debug": "ndb server.js",
-    "watch": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js"
+    "watch": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
+    "build": "parcel build ./public/js/index.js --out-dir ./public/js --out-file bundle.js"
   },
   "author": "Kien",
   "license": "ISC",
