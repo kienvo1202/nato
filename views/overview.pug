@@ -1,0 +1,42 @@
+extends base
+
+block content
+  main.main
+    .card-container
+      each t in tours
+        .card
+          .card__header
+            .card__picture
+              .card__picture-overlay &nbsp;
+              img.card__picture-img(src=`img/tours/${t.imageCover}`, alt=`${t.name}`)
+            h3.heading-tertirary
+              span= t.name
+
+          .card__details
+            h4.card__sub-heading= `${t.difficulty} ${t.duration}-day tour`
+            p.card__text= t.summary
+            .card__data
+              svg.card__icon
+                use(xlink:href='img/icons.svg#icon-map-pin')
+              span= t.startLocation.description
+            .card__data
+              svg.card__icon
+                use(xlink:href='img/icons.svg#icon-calendar')
+              span= t.startDates[0].toLocaleString('en-us', {month:'long', year:'numeric'})
+            .card__data
+              svg.card__icon
+                use(xlink:href='img/icons.svg#icon-flag')
+              span= t.locations.length
+            .card__data
+              svg.card__icon
+                use(xlink:href='img/icons.svg#icon-user')
+              span= t.maxGroupSize
+
+          .card__footer
+            p
+              span.card__footer-value= `$${t.price} `
+              span.card__footer-text per person
+            p.card__ratings
+              span.card__footer-value= t.ratingsAverage
+              span.card__footer-text= ` rating (${t.ratingsQuantity})`
+            a.btn.btn--green.btn--small(href=`tour/${t.slug}`) Details
