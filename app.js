@@ -70,7 +70,7 @@ app.use((req, res, next) => {
 //   res.send('Postable~~~');
 // });
 
-//2.THE ROUTE HANDLER
+//2.THE ROUTE HANDLE
 // app.get('/api/v1/tours', getAllTours);
 // app.get('/api/v1/tours/:id/', getTour);
 // app.post('/api/v1/tours', createTour );
